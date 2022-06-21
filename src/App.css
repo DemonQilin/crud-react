@@ -1,15 +1,66 @@
 .App {
   flex-grow: 1;
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
 
   background-color: #fff;
+
+  overflow: hidden;
 }
 
 .App--title {
   margin: 0;
   margin-bottom: 2rem;
+
+  border-bottom: #555 2px solid;
 }
 
 .App--table-container {
-  overflow-x: auto;
+  position: relative;
+
+  flex-grow: 1;
+  overflow: auto;
+}
+
+.App--actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.App--btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1em;
+
+  text-decoration: none;
+  font-weight: bold;
+
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+
+  cursor: pointer;
+}
+
+.App--btn__add {
+  background-color: #00bcd4;
+}
+
+.Modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgb(0,0,0,0.5);
 }

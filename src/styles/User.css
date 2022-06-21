@@ -1,29 +1,15 @@
-.User--actions {
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    gap: 1rem;
-}
-
-.User--btn {
+.User--actions.User--actions {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.5em;
-
-    text-decoration: none;
-    font-weight: bold;
+    gap: 1rem;
 
     border: none;
-    border-radius: 3px;
-    color: #fff;
-
-    cursor: pointer;
 }
 
 .User--btn__edit {
-    background-color: #00bcd4;
+    background-color: #f4c836;
 }
 
 .User--btn__delete {

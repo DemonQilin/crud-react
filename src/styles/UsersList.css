@@ -3,7 +3,6 @@
     min-width: 870px;
     
     border-collapse: collapse;
-    border: #e4e4e4 2px solid;
     border-top: none;
 
     table-layout: fixed;
@@ -13,14 +12,17 @@
 .UsersList th {
     padding: 1rem;
     text-align: left;
+}
 
-    border-right: #e4e4e4 2px solid;
+.UsersList--thead {
+    position: sticky;
+    top: 0;
+    left: 0;
 }
 
 .UsersList--thead th {
     background-color: #333;
     color: #fff;
-    border: #333 2px solid;
 }
 
 .UsersList--thead th:nth-child(1){
@@ -48,6 +50,19 @@
 
 .UsersList--thead th:nth-child(7){
     width: 20%;
+}
+
+.UsersList--tbody th {
+    border-right: #e4e4e4 2px solid;
+    border-left: #e4e4e4 2px solid;
+}
+.UsersList--tbody td {
+    border-right: #e4e4e4 2px solid;
+    overflow-x: auto;
+}
+
+.UsersList--tbody tr:last-child {
+    border-bottom: #e4e4e4 2px solid;
 }
 
 .UsersList--tbody tr:nth-child(2n+1) {

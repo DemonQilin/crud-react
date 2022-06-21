@@ -1,0 +1,58 @@
+.FormUser {
+    position: relative;
+
+    width: 100%;
+    min-width: 300px;
+    max-width: 420px;
+    padding: 3.2rem;
+    display: flex;
+    flex-direction: column;
+
+    background-color: #fff;
+}
+
+.FormUser--title {
+    margin: 0;
+    margin-bottom: 1.5rem;
+
+    font-size: 3.2rem;
+}
+
+.FormUser--inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.FormUser--label {
+    margin-bottom: 0.8rem;
+
+    font-size: 1.6rem;
+}
+
+.FormUser--input {
+    margin-bottom: 2rem;
+    padding: 1rem;
+}
+
+.UserForm--submit {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #333;
+    color: #fff;
+}
+
+.FormUser--cancel {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    padding: 2rem;
+
+    background-color: transparent;
+    color: #333;
+
+    font-size: 2rem;
+}

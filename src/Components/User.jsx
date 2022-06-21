@@ -11,13 +11,11 @@ const User = ({user}) => {
             <td>{user.password}</td>
             <td>{user.birthday}</td>
             <td className='User--actions'>
-                <button className='User--btn User--btn__edit'>
-                    <i class="fa-solid fa-pen-to-square"></i>
-                    Editar
+                <button className='App--btn User--btn__edit' title='Editar usuario'>
+                    <i className="fa-solid fa-pen-to-square"></i>
                 </button>
-                <button className='User--btn User--btn__delete'>
-                    <i class="fa-solid fa-trash"></i>
-                    Eliminar
+                <button className='App--btn User--btn__delete' title='Eliminar usuario'>
+                    <i className="fa-solid fa-trash"></i>
                 </button>
             </td>
         </tr>
