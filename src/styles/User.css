@@ -1,0 +1,32 @@
+.User--actions {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 1rem;
+}
+
+.User--btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5em;
+
+    text-decoration: none;
+    font-weight: bold;
+
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+
+    cursor: pointer;
+}
+
+.User--btn__edit {
+    background-color: #00bcd4;
+}
+
+.User--btn__delete {
+    background-color: #f44336;
+}
+
