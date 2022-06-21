@@ -1,7 +1,9 @@
+import axios from 'axios'
 import React from 'react'
 import '../styles/User.css'
 
-const User = ({user}) => {
+const User = ({ user, setModal, setUser }) => {
+
     return (
         <tr>
             <th scope='row'>{user.id}</th>
@@ -11,10 +13,24 @@ const User = ({user}) => {
             <td>{user.password}</td>
             <td>{user.birthday}</td>
             <td className='User--actions'>
-                <button className='App--btn User--btn__edit' title='Editar usuario'>
+                <button
+                    className='App--btn User--btn__edit'
+                    title='Editar usuario'
+                    onClick={(e) => {
+                        setModal(1);
+                        setUser(user);
+                    }}
+                >
                     <i className="fa-solid fa-pen-to-square"></i>
                 </button>
-                <button className='App--btn User--btn__delete' title='Eliminar usuario'>
+                <button
+                    className='App--btn User--btn__delete' 
+                    title='Eliminar usuario'
+                    onClick={(e) => {
+                        setUser(user);
+                        setModal(2);
+                    }}
+                >
                     <i className="fa-solid fa-trash"></i>
                 </button>
             </td>

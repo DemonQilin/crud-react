@@ -7,6 +7,7 @@ import { useForm } from 'react-hook-form';
 function App() {
   const [users, setUsers] = useState();
   const [modal, setModal] = useState(false);
+  const [user, setUser] = useState(null);
 
   const HookForm = useForm();
 
@@ -14,6 +15,7 @@ function App() {
     const data = await fetch('https://users-crud1.herokuapp.com/users/').then(res => res.json());
     setUsers(data);
   };
+
   const handlerAddUser = () => {
     setModal(1);
   }
@@ -30,13 +32,17 @@ function App() {
           <i className="fa-solid fa-user-plus"></i>
           Agregar
         </button>
-        <button className='App--btn App--btn__add' onClick={handlerAddUser} title="Recargar tabla de usuarios">
-          <i class="fa-solid fa-arrows-rotate"></i>
+        <button className='App--btn App--btn__add' onClick={(e) => getUsers()} title="Recargar tabla de usuarios">
+          <i className="fa-solid fa-arrows-rotate"></i>
           Refrescar
         </button>
       </div>
       <div className="App--table-container">
-        <UsersList users={users}/>
+        <UsersList
+          users={users}
+          setModal={setModal}
+          setUser={setUser}
+        />
       </div>
       {modal &&
         <Modal
@@ -44,6 +50,8 @@ function App() {
           setModal={setModal}
           form={HookForm}
           getUsers={getUsers}
+        user={user}
+        setUser={setUser}
         />
       }
     </div>

@@ -1,36 +1,46 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../styles/FormUser.css';
 import axios from 'axios';
 
-const FormUser = ({ form, setModal, getUsers}) => {
+const FormUser = ({ form, setModal, getUsers, user, setUser}) => {
     const { register, handleSubmit, reset } = form;
-    const submit = data => {
-        data.birthday = data.birthday.toJSON().split('T')[0];
-        axios.post('https://users-crud1.herokuapp.com/users/', data)
-            .then(res => {
-                reset({
-                    first_name: '',
-                    last_name: '',
-                    email: '',
-                    password: '',
-                    birthday: ''
-                });
-                getUsers();
-                setModal(false);
-            })
-            .catch(error => console.log(error));
-    }
 
-    const handlerFormCancel = (e) => {
+    const resetForm = () => {
         reset({
             first_name: '',
             last_name: '',
             email: '',
             password: '',
             birthday: ''
-        })
+        });
+        getUsers();
         setModal(false);
+    };
+
+    const submit = data => {
+        data.birthday = data.birthday.toJSON().split('T')[0];
+
+        if (user) {
+            axios.put(`https://users-crud1.herokuapp.com/users/${user.id}/`, data)
+                .then(res => {
+                    setUser(null);
+                    resetForm();
+                })
+                .catch(error => console.warn(error));
+        } else {
+            axios.post('https://users-crud1.herokuapp.com/users/', data)
+                .then(res => {
+                    resetForm();
+                })
+                .catch(error => console.warn(error));
+        }
     }
+
+    useEffect(() => {
+        if (user) {
+            reset(user);
+        }
+    }, [user]);
 
     return (
         <form className="FormUser" onSubmit={handleSubmit(submit)} autoComplete="off">
@@ -70,7 +80,10 @@ const FormUser = ({ form, setModal, getUsers}) => {
                 })} />
             </div>
             <input type="submit" value={'Agregar usuario'} className="App--btn UserForm--submit" />
-            <button type="button" className='App--btn FormUser--cancel' onClick={handlerFormCancel}><i className="fa-solid fa-xmark"></i></button>
+            <button type="button" className='App--btn FormUser--cancel' onClick={(e) => {
+                resetForm();
+                setUser(null);
+            }}><i className="fa-solid fa-xmark"></i></button>
         </form>
     )
 }

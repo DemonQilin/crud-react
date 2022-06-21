@@ -51,8 +51,16 @@
 
     padding: 2rem;
 
-    background-color: transparent;
-    color: #333;
-
     font-size: 2rem;
+
+    background-color: transparent;
+    color: rgb(51, 51, 51, 0.5);
+
+    transition: transform 0.2s ease-in-out;
+}
+
+.FormUser--cancel:hover {
+    color: rgb(51, 51, 51, 1);
+
+    transform: scale(1.1);
 }

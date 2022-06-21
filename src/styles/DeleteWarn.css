@@ -1,0 +1,30 @@
+.DeleteWarn {
+    position: relative;
+    width: 100%;
+    min-width: 300px;
+    max-width: 420px;
+    padding: 2rem;
+
+    background-color: #fff;
+}
+
+.DeleteWarn--title {
+    margin: 0;
+    margin-bottom: 1.5rem;
+
+    font-size: 3.2rem;
+}
+
+.DeleteWarn--msg {
+    margin: 0;
+    margin-bottom: 3rem;
+
+    font-size: 1.6rem;
+}
+
+.DeleteWarn--delete {
+    width: 100%;
+
+    background-color: #333;
+    color: #fff;
+}
