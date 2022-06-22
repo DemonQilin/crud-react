@@ -1,14 +1,17 @@
 .FormUser {
     position: relative;
 
-    width: 100%;
+    width: 80%;
+    height: 80%;
     min-width: 300px;
     max-width: 420px;
+    max-height: 560px;
     padding: 2.5rem;
     display: flex;
     flex-direction: column;
 
     background-color: #fff;
+    overflow-y: auto;
 }
 
 .FormUser--title {
