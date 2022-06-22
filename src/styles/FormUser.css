@@ -4,7 +4,7 @@
     width: 100%;
     min-width: 300px;
     max-width: 420px;
-    padding: 3.2rem;
+    padding: 2.5rem;
     display: flex;
     flex-direction: column;
 
@@ -24,17 +24,17 @@
 }
 
 .FormUser--label {
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.5rem;
 
     font-size: 1.6rem;
 }
 
 .FormUser--input {
-    margin-bottom: 2rem;
     padding: 1rem;
 }
 
 .UserForm--submit {
+    margin-top: 2rem;
     padding: 1.5rem;
     display: flex;
     justify-content: center;
@@ -63,4 +63,10 @@
     color: rgb(51, 51, 51, 1);
 
     transform: scale(1.1);
+}
+
+.FormUser--warn {
+    margin-bottom: 1rem;
+
+    font-size: 1rem;
 }
